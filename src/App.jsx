@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { RecipeListPage } from "./pages/RecipeListPage";
 import { Center } from "@chakra-ui/react";
-import { RecipeChoice } from "./components/RecipeChoice";
 import { RecipeSearch } from "./components/RecipeSearch";
+import { RecipePage } from "./pages/RecipePage";
 
 export const App = () => {
   // Your state code here
@@ -11,11 +10,9 @@ export const App = () => {
   return (
     <Center className="app">
       {userRecipe ? (
-        <RecipeChoice recipe={userRecipe} />
+        <RecipePage choice={userRecipe} clickFn={setUserRecipe} />
       ) : (
-        <>
-          <RecipeSearch />
-        </>
+        <RecipeSearch clickFn={setUserRecipe} />
       )}
     </Center>
   );

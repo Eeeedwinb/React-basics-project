@@ -1,5 +1,5 @@
 import { Input } from "@chakra-ui/react";
 
 export const TextInput = ({ onChange }) => {
-  return <Input className="input" onChange={onChange}></Input>;
+  return <Input placeholder="Search recipes" onChange={onChange}></Input>;
 };
