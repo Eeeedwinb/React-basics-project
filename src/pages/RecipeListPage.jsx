@@ -6,6 +6,7 @@ import {
   Text,
   Image,
   Grid,
+  Box,
 } from "@chakra-ui/react";
 
 export const RecipeListPage = ({ recipes, clickFn }) => {
@@ -20,34 +21,34 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
           <Card key={label} cursor="pointer" onClick={() => clickFn(recipe)}>
             <CardBody>
               <Image src={recipe.image} h={100} w={100} />
-              <div className="Meal">
+              <Box className="Meal">
                 {recipe.mealType.map((meal) => (
                   <Text color="red.800" key={meal}>
                     {meal}
                   </Text>
                 ))}
-              </div>
+              </Box>
               <Text fontWeight="medium">{recipe.label}</Text>
               {recipe.dietLabels.map((dietLabel) => (
                 <Text key={dietLabel}>{dietLabel}</Text>
               ))}
-              <div>
+              <Box>
                 {recipe.cautions.map((caution) => (
                   <Text color="blue.800" key={caution}>
                     {caution}
                   </Text>
                 ))}
-              </div>
+              </Box>
 
-              <div className="Dish">
+              <Box>
                 {recipe.dishType.map((dish) => (
                   <Text color="green.800" key={dish}>
                     {dish}
                   </Text>
                 ))}
-              </div>
+              </Box>
 
-              <div className="HealthLabels">
+              <Box>
                 {recipe.healthLabels
                   .filter(
                     (label) => label === "Vegan" || label === "Vegetarian"
@@ -57,7 +58,7 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
                       {label}
                     </Text>
                   ))}
-              </div>
+              </Box>
             </CardBody>
           </Card>
         ))}
