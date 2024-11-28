@@ -2,6 +2,7 @@ import { useState } from "react";
 import { RecipeListPage } from "./pages/RecipeListPage";
 import { Center } from "@chakra-ui/react";
 import { RecipeChoice } from "./components/RecipeChoice";
+import { RecipeSearch } from "./components/RecipeSearch";
 
 export const App = () => {
   // Your state code here
@@ -13,7 +14,7 @@ export const App = () => {
         <RecipeChoice recipe={userRecipe} />
       ) : (
         <>
-          <RecipeListPage />
+          <RecipeSearch />
         </>
       )}
     </Center>

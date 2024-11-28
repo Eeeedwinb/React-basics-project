@@ -5,18 +5,16 @@ import {
   CardBody,
   Text,
   Image,
-  Flex,
   Grid,
-  Box,
 } from "@chakra-ui/react";
 import { data } from "../utils/data";
 
-export const RecipeListPage = () => {
+export const RecipeListPage = ({ recipe, clickFn }) => {
   // You can play around with the console log, but ultimately remove it once you are done
   console.log(data.hits[0].recipe.label);
 
   return (
-    <Center h="100vh" flexDir="column">
+    <Center h="10vh" flexDir="column">
       <Heading>Your Recipe App</Heading>
       <Grid templateColumns="repeat(4, 1fr)" gap={6}>
         {data.hits.map((hit, label) => (
@@ -48,20 +46,17 @@ export const RecipeListPage = () => {
                   </Text>
                 ))}
               </div>
-              <div className="health_labels">
-                {hit.recipe.healthLabels.includes("Vegan") &&
-                hit?.recipe.healthLabels.includes("Vegetarian") ? (
-                  <>
-                    <Text>Vegan</Text>
-                    <Text>Vegetarian</Text>
-                  </>
-                ) : hit?.recipe?.healthLabels?.includes("Vegan") ? (
-                  <Text>Vegan</Text>
-                ) : hit?.recipe?.healthLabels?.includes("Vegetarian") ? (
-                  <Text>Vegetarian</Text>
-                ) : (
-                  <Text>NO OF BOTH</Text>
-                )}
+
+              <div className="HealthLabels">
+                {hit.recipe.healthLabels
+                  .filter(
+                    (label) => label === "Vegan" || label === "Vegetarian"
+                  )
+                  .map((label) => (
+                    <Text color="red.800" size="xl" key={label}>
+                      {label}
+                    </Text>
+                  ))}
               </div>
             </CardBody>
           </Card>
