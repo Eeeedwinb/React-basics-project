@@ -2,6 +2,7 @@ import { data } from "../utils/data";
 import { useState } from "react";
 import { TextInput } from "./ui/TextInput";
 import { RecipeListPage } from "../pages/RecipeListPage";
+import { Center } from "@chakra-ui/react";
 
 export const RecipeSearch = ({ clickFn }) => {
   const [searchField, setSearchField] = useState(``);
@@ -31,9 +32,9 @@ export const RecipeSearch = ({ clickFn }) => {
   };
 
   return (
-    <>
-      <TextInput onChange={handleChange} w={1000} mb={10} />
+    <Center gap={9} flexDir={"column"}>
+      <TextInput onChange={handleChange} />
       <RecipeListPage clickFn={handleRecipeClick} recipes={matchedRecipes} />
-    </>
+    </Center>
   );
 };
