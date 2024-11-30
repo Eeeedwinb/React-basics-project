@@ -13,8 +13,8 @@ export const App = () => {
         <RecipePage choice={userRecipe} clickFn={setUserRecipe} />
       ) : (
         <Box margin={6}>
-          <Heading size="2xl" margin={2} color="white" textAlign={"center"}>
-            Edwins Recipe Checker
+          <Heading size="2xl" margin={5} color="white" textAlign={"center"}>
+            Recipe Checker
           </Heading>
           <RecipeSearch clickFn={setUserRecipe} />
         </Box>

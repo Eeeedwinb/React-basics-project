@@ -14,8 +14,8 @@ export const RecipePage = ({ choice, clickFn }) => {
 
   return (
     <Center
-      flexDir={"column"}
-      bgColor={"white"}
+      flexDir="column"
+      bgColor="white"
       w={{ base: "100%", lg: "70%" }}
       h={{ base: "auto", lg: "full" }}
       gap={2}
@@ -25,25 +25,15 @@ export const RecipePage = ({ choice, clickFn }) => {
     >
       <Flex>
         <Button onClick={() => clickFn()} variant="ghost">
-          Go back
+          Back to homepage
         </Button>
       </Flex>
-      <Image
-        src={choice.image}
-        w={"full"}
-        h={{ base: "14em", lg: "14em" }}
-        objectFit="cover"
-      />
+      <Image src={choice.image} w="full" h="14em" objectFit="cover" />
 
-      <Text color="gray.600" textTransform="uppercase" fontSize={"xs"}>
+      <Text color="gray.600" textTransform="uppercase" fontSize="xs">
         {choice.mealType} | {choice.dishType}
       </Text>
-      <Text
-        fontSize={{ base: "4xl", lg: "4xl" }}
-        fontWeight={"medium"}
-        ml={2}
-        mr={2}
-      >
+      <Text fontSize="4xl" fontWeight="medium" ml={2} mr={2}>
         {choice.label}
       </Text>
       <Grid
@@ -55,26 +45,24 @@ export const RecipePage = ({ choice, clickFn }) => {
       >
         <Box>
           <Box mb={2}>
-            <Text textAlign={"left"} as={"span"}>
-              Total cooking time:
-            </Text>{" "}
-            <Text textAlign={"left"} as={"span"} fontWeight={"medium"}>
+            <Text as="span">Total cooking time:</Text>{" "}
+            <Text as="span" fontWeight="medium">
               {choice.totalTime} minutes
             </Text>
           </Box>
           <Box mb={4}>
-            <Text as={"span"}>Servings:</Text>{" "}
-            <Text as={"span"} fontWeight={"medium"}>
+            <Text as="span">Servings:</Text>{" "}
+            <Text as="span" fontWeight="medium">
               {choice.yield}
             </Text>
           </Box>
 
           <Box mb={4}>
-            <Text fontWeight={"medium"} mb={1}>
+            <Text fontWeight="medium" mb={1}>
               Ingredients:
             </Text>
             {choice.ingredientLines.map((label) => (
-              <Text textAlign={"left"} key={label} mb={1}>
+              <Text textAlign="left" key={label} mb={1}>
                 {label}
               </Text>
             ))}
@@ -82,7 +70,7 @@ export const RecipePage = ({ choice, clickFn }) => {
         </Box>
         <Box>
           <Box mb={4}>
-            <Flex flexDir={"row"}>
+            <Flex flexDir="row">
               <Box>
                 <Text mb={1}>Health Labels:</Text>
                 {choice.healthLabels.map((label) => (
@@ -91,7 +79,7 @@ export const RecipePage = ({ choice, clickFn }) => {
                     textColor="purple.800"
                     textTransform="uppercase"
                     fontSize={{ base: "xs", lg: "sm" }}
-                    fontWeight={"semibold"}
+                    fontWeight="semibold"
                     key={label}
                     ml={2}
                     mb={2}
@@ -144,8 +132,8 @@ export const RecipePage = ({ choice, clickFn }) => {
               gap={2}
             >
               <Text>
-                {choice.calories.toFixed(0)}
-                <Text textTransform="uppercase" fontWeight={"medium"}>
+                {choice.calories.toFixed(0)}{" "}
+                <Text as="span" textTransform="uppercase" fontWeight={"medium"}>
                   Calories
                 </Text>
               </Text>
@@ -154,7 +142,11 @@ export const RecipePage = ({ choice, clickFn }) => {
                 return (
                   <Text key={label}>
                     {nutrient.quantity.toFixed(0)} {nutrient.unit}{" "}
-                    <Text textTransform="uppercase" fontWeight={"medium"}>
+                    <Text
+                      as="span"
+                      textTransform="uppercase"
+                      fontWeight={"medium"}
+                    >
                       {nutrient.label}
                     </Text>
                   </Text>

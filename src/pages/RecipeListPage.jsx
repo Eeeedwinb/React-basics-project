@@ -11,15 +11,12 @@ import {
 } from "@chakra-ui/react";
 
 export const RecipeListPage = ({ recipes, clickFn }) => {
-  // You can play around with the console log, but ultimately remove it once you are done
-  // console.log(data.hits[0].recipe.label);
-
   return (
     <Center h="auto" w="100%" flexDir="column">
       <Grid
         templateColumns={{ base: "1fr", lg: "repeat(4, 1fr)" }}
         gap={8}
-        margin={4}
+        m={4}
         pl={{ base: 0, lg: "30" }}
         pr={{ base: 0, lg: "30" }}
       >
@@ -27,7 +24,7 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
           <Card
             bgColor="white"
             w={{ base: "100%", lg: "18em" }}
-            borderRadius={"5%"}
+            borderRadius="5%"
             key={label}
             cursor="pointer"
             onClick={() => clickFn(recipe)}
@@ -47,7 +44,7 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
                     <Text
                       color="gray.600"
                       textTransform="uppercase"
-                      fontSize={"xs"}
+                      fontSize="xs"
                       key={meal}
                     >
                       {meal}
@@ -67,9 +64,9 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
                         bgColor="purple.100"
                         textColor="purple.800"
                         textTransform="uppercase"
-                        fontSize={"xs"}
+                        fontSize="xs"
                         key={label}
-                        margin={1}
+                        m={1}
                       >
                         {label}
                       </Tag>
@@ -81,9 +78,9 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
                       bgColor="green.100"
                       textColor="green.800"
                       textTransform="uppercase"
-                      fontSize={"xs"}
+                      fontSize="xs"
                       key={dietLabel}
-                      margin={1}
+                      m={1}
                     >
                       {dietLabel}
                     </Tag>
@@ -94,7 +91,7 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
                   {recipe.dishType.map((dish) => (
                     <Text key={dish}>
                       Dish:{" "}
-                      <Text as={"span"} fontWeight={"medium"}>
+                      <Text as="span" fontWeight="medium">
                         {dish}
                       </Text>
                     </Text>
@@ -107,9 +104,9 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
                       bgColor="red.100"
                       textColor="red.800"
                       textTransform="uppercase"
-                      fontSize={"xs"}
+                      fontSize="xs"
                       key={caution}
-                      margin={1}
+                      m={1}
                     >
                       {caution}
                     </Tag>
